@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
                 <input type="text" name="lname">
                 
                 <p>The sum of 1 + 1 is {{1 + 1}}</p>
+                <p>name of customer is: {{customer}}</p>
              `
 
 })
