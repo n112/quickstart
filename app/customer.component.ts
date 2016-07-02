@@ -1,6 +1,17 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import { Customer } from './customer';
 
-export class Customer {
-    id: number;
-    name: string;
+@Component ({
+    selector: 'cust',
+    template: ` {{customer1.name}}
+    
+    `
+})
+export class CustomerComponent {
+@Input()
+customer1:Customer;
+
+constructor(){
+
+}
 }

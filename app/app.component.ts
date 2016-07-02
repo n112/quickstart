@@ -1,23 +1,34 @@
 
 import { Component } from '@angular/core';
-import { Customer } from './customer.component';
+import { Customer } from './customer';
+import { CustomerComponent } from './customer.component';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>My First Angular 2 App</h1>
+    template: `<h1>Angular 2 App</h1>
 
                 and input:              
-                <input [(ngModel)]="customer.name" type="text" name="lname">
+                <input [(ngModel)]="customer2.name" type="text" name="lname">
                 
                 <p>The sum of 1 + 1 is {{1 + 1}}</p>
-                <p>name of customer is: {{customer.name}}</p>
-             `
+                <p>name of customer is: {{customer2.name}}</p>
+
+             <P>2</P>
+
+             <cust [customer1]="customer2" ></cust>
+
+             <button>ADD</button>
+             `,
+    directives: [CustomerComponent]
 
 })
 export class AppComponent {
-customer: Customer = {
+
+
+customer2: Customer = {
     id: 1,
     name: 'aaa'
 };
 
 }
+
