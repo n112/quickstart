@@ -2,6 +2,9 @@
 import { Component } from '@angular/core';
 import { Customer } from './customer';
 import { CustomerComponent } from './customer.component';
+import { CustomerTableComponent } from './customerTable.component';
+
+
 
 @Component({
     selector: 'my-app',
@@ -18,8 +21,12 @@ import { CustomerComponent } from './customer.component';
              <cust [customer1]="customer2" ></cust>
 
              <button>ADD</button>
+
+              <customerTable></customerTable>
+
              `,
-    directives: [CustomerComponent]
+    directives: [CustomerComponent, CustomerTableComponent]
+   
 
 })
 export class AppComponent {
