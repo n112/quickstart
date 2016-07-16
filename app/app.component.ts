@@ -20,7 +20,7 @@ import { CustomerTableComponent } from './customerTable.component';
 
              <cust [customer1]="customer2" ></cust>
 
-             <button>ADD</button>
+          
 
               <customerTable></customerTable>
 
