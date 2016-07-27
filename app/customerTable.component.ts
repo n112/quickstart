@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Customer } from './customer';
+import { CustomerService } from './customer.service';
 
 @Component({
     selector: 'customerTable',
     template: `<h1>customer Table</h1>
-
+    
 <button (click)="clicked()">ADD</button>
 
     <table border="1">
@@ -22,18 +23,17 @@ import { Customer } from './customer';
     </table>
 
 
-   
+`,
+  providers: [CustomerService]
 
-
-`
 })
 
-export class CustomerTableComponent {
+export class CustomerTableComponent implements OnInit {
 @Input()
 customerTable1: Customer;
 customerArry: Customer[];
 
-constructor() {
+constructor(private customerService: CustomerService) {
 this.customerTable1 = new Customer();
 
 this.customerTable1.id=1;
@@ -54,5 +54,11 @@ this.customerArry[this.customerArry.length-1].id=this.customerArry.length+1;
 this.customerArry[this.customerArry.length-1].name="zzz";
   }
 
+getCustomers() {
+    this.customerService.getCustomers().then(customers => this.customerArry = customers);
+  }
+  ngOnInit() {
+    this.getCustomers();
+  }
 }
 
